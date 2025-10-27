@@ -1,28 +1,29 @@
 #include "point.h"
 #include <iostream>
+#include <cmath>
 
-Point(double x_val = 0.0, double y_val = 0.0) : x(x_val), y(y_val) {}
+Point::Point(double x_val, double y_val) : x(x_val), y(y_val) {}
 
-double Point::getX() const { return x; }
-double Point::getY() const { return y; }
+double Point::getX() { return x; }
+double Point::getY()  { return y; }
 
-double operator-(const Point &other) const {
+double Point::operator-(const Point &other) {
     return sqrt(pow(other.x - x, 2) + pow(other.y - y, 2));
 }
 
-bool Point::operator==(const Point &other) const {
+bool Point::operator==(const Point &other) {
     return (x == other.x) && (y == other.y);
 }
 
-bool Point::operator!=(const Point &other) const {
+bool Point::operator!=(const Point &other) {
     return !(*this == other);
 }
 
-Point Point::operator/(const Point &other) const {
+Point Point::operator/(const Point &other) {
     return Point((x + other.x) / 2, (y + other.y) / 2);
 }
 
-std::ostream& Point::operator<<(std::ostream &os, const Point &p) {
+std::ostream& operator<<(std::ostream &os, const Point &p) {
     os << "(" << p.x << ", " << p.y << ")";
     return os;
 }

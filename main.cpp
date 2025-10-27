@@ -1,7 +1,15 @@
 #include <iostream>
+#include "src/point.h"
 
-#include "src/hello.hpp"
 
 int main() {
-  std::cout << hello() << std::endl;
+  Point p1(3.2, 9.8);
+  Point p2(5.5, -1.2);
+
+  std::cout << p1 - p2 << std::endl;
+  std::cout << (p1 == p2) << std::endl;
+  std::cout << (p1 != p2) << std::endl;
+  std::cout << (p1 / p2) << std::endl;
+
+  return 0;
 }

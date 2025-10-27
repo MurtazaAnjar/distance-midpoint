@@ -15,7 +15,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(point_test tests/point_test.cpp)
+add_executable(point_test tests/point_test.cpp src/point.cpp)
 add_executable(main main.cpp src/point.cpp)
 
 target_link_libraries(point_test PRIVATE Catch2::Catch2WithMain)
